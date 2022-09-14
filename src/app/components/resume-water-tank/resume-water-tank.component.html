@@ -1,0 +1,59 @@
+<!-- <div class="resume-water-tank-container" *ngIf="deviceWaterTank$ | async as deviceWater"> -->
+<div class="resume-water-tank-container" *ngIf="deviceWaterTank$ | async as deviceWater">
+  <mat-card class="example-card">
+      <mat-card-title>
+          <img class="icon-sm" [attr.disabled] = "!isActivity(deviceWater.status)" [src] = '"assets/images"+getSrcImage(deviceWater.status)'>
+          {{ deviceWater.nickName }}
+      </mat-card-title>
+      <mat-card-subtitle>Code: {{ deviceWater.code }}</mat-card-subtitle>
+      <mat-card-content>
+        <p>
+          <img class="icon-sm-min" [attr.disabled] = "!isActivity(deviceWater.statusValveInput)" [src] = '"assets/images"+getSrcImage(deviceWater.statusValveInput)'>
+          Input Valve
+        </p>
+        <p>
+          <img class="icon-sm-min" [attr.disabled] = "!isActivity(deviceWater.statusValveOutput)" [src] = '"assets/images"+getSrcImage(deviceWater.statusValveOutput)'>
+          Output Valve
+        </p>
+        <p>Current Level: {{ deviceWater.currentLevel }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="small-icon-button" mat-icon-button>
+            <mat-icon>search</mat-icon>
+        </button>
+        <button class="small-icon-button" mat-icon-button>
+            <mat-icon>delete</mat-icon>
+        </button>
+        <span *ngIf="deviceWaterTank1$ | async"></span>
+      </mat-card-actions>
+    </mat-card>
+</div>
+
+<!-- <div class="resume-water-tank-container">
+  <mat-card class="example-card">
+      <mat-card-title>
+          <img class="icon-sm">
+          deviceWater.nickName
+      </mat-card-title>
+      <mat-card-subtitle>Code: deviceWater.code</mat-card-subtitle>
+      <mat-card-content>
+        <p>
+          <img class="icon-sm-min">
+          Input Valve
+        </p>
+        <p>
+          <img class="icon-sm-min">
+          Output Valve
+        </p>
+        <p>Current Level: deviceWater.currentLevel </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="small-icon-button" mat-icon-button>
+            <mat-icon>search</mat-icon>
+        </button>
+        <button class="small-icon-button" mat-icon-button>
+            <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+</div> -->

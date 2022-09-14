@@ -1,0 +1,31 @@
+div.container-register{
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    box-sizing: border-box;
+
+    align-items: center;
+    overflow: auto;
+
+    & div.box-register{
+        
+        margin: 0 auto;
+        height: 500px;
+        width: 400px;
+        min-width: 400px;
+
+        & mat-card{
+            & mat-card-content {
+                & mat-form-field{
+                    margin: 5px 5px;
+                }
+    
+                & div button mat-icon{
+                    margin-right: 5px;;
+                }
+            }
+    
+        }
+    }
+}

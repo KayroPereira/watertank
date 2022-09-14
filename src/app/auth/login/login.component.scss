@@ -1,0 +1,46 @@
+@mixin colorPrimary {
+    color:#444;
+}
+
+div.login-container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    // border: solid green 2px;
+    align-items: center;
+    overflow: auto;
+
+    & div.box-login{
+        margin: 0 auto;
+        // border: solid green 2px;
+    
+        width: 300px;
+        min-width: 300px;
+
+        & mat-card{
+            background-color: #eee;
+    
+            & mat-card-content{
+                margin: 0px;
+    
+                & mat-form-field{
+                    margin: 2px 0px;
+                    & mat-label{
+                        @include colorPrimary();
+                    }
+    
+                    & input {
+                        @include colorPrimary();
+                    }
+                }
+            }
+    
+            & mat-card-actions{
+                & button{
+                    @include colorPrimary();
+                }
+            }
+        }
+    }
+}

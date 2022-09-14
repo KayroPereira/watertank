@@ -1,0 +1,75 @@
+<div class="container-register-water-tank">
+    <div class="register-water-tank-box">
+        <form role="form" [formGroup]="formRegister" (ngSubmit)="onSubmit()">
+            <mat-card>
+                <mat-card-title fxLayoutAlign="center">Add Water Tank</mat-card-title>
+
+                <mat-card-content fxLayout="column" fxLayoutAlign="space-around stretch">
+                    <mat-form-field fxFlex="90">
+                        <mat-label>Nick Name</mat-label>
+                        <input matInput type="text" placeholder="Nick Name" formControlName="nickname">
+                        <mat-hint>Insert nick name</mat-hint>
+                    </mat-form-field>
+        
+                    <div>
+                        <mat-form-field fxFlex="45">
+                            <mat-label>Product Code</mat-label>
+                            <input matInput type="text" placeholder="Product Code" formControlName="code" maxlength="6">
+                            <mat-hint>Insert product code</mat-hint>
+                        </mat-form-field>
+
+                        <mat-form-field fxFlex="45">
+                            <mat-label>Mac Address</mat-label>
+                            <input matInput type="text" placeholder="Mac Address" formControlName="mac" maxlength="8">
+                            <mat-hint>Insert mac address</mat-hint>
+                        </mat-form-field>
+                    </div>
+
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" placeholder="Password" formControlName="password">
+                    </mat-form-field>
+
+                    <div>
+                        <mat-form-field fxFlex="45">
+                            <mat-label>Bottom Level</mat-label>
+                             <input matInput type = "text" placeholder="Bottom Level" maxlength="3"
+                             formControlName="bottomLevel" (input)='formatInputNumber(0, 999, $event)'>
+                             <mat-hint>value between 0 to 999</mat-hint>
+                            <mat-error *ngIf="formRegister.controls['bottomLevel'].hasError('max')">out range 0 to 999</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field fxFlex="45">
+                            <mat-label>Top Level</mat-label>
+                            <input matInput type="text" placeholder="Top Level" maxlength="3" 
+                            formControlName="topLevel" (input)='formatInputNumber(0, 999, $event)'>
+                            <mat-hint>value between 0 to 999</mat-hint>
+                            <mat-error *ngIf="formRegister.controls['topLevel'].hasError('max')">out range 0 to 999</mat-error>
+                        </mat-form-field>
+                    </div>
+                    
+                    <div>
+                        <mat-form-field fxFlex="45">
+                            <mat-label>Critical Bottom Level</mat-label>
+                             <input matInput type = "text" placeholder="Critical Bottom Level" maxlength="3"
+                             formControlName="criticalBottomLevel" (input)='formatInputNumber(0, 999, $event)'>
+                            <mat-hint>value between 0 to 999</mat-hint>
+                            <mat-error *ngIf="formRegister.controls['criticalBottomLevel'].hasError('max')">out range 0 to 999</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field fxFlex="45">
+                            <mat-label>Critical Top Level</mat-label>
+                            <input matInput type="text" placeholder="Critical Top Level" maxlength="3" 
+                            formControlName="criticalTopLevel" (input)='formatInputNumber(0, 999, $event)'>
+                            <mat-hint>value between 0 to 999</mat-hint>
+                            <mat-error *ngIf="formRegister.controls['criticalTopLevel'].hasError('max')">out range 0 to 999</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="end end">
+                        <button mat-button><mat-icon>done</mat-icon>Register</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+<div class="container-register">
+    <div class="box-register">
+
+        <form role="form" [formGroup]="formRegister" (ngSubmit)="onSubmit()">    
+            <mat-card>
+                <mat-card-title fxLayoutAlign="center" >Sing Up</mat-card-title>
+    
+                <mat-card-content fxLayout="column" fxLayoutAlign="space-around stretch">
+                    <div fxLayout="row" fxLayoutAlign="space-between stretch">
+                        <mat-form-field fxFlex="45">
+                            <mat-label>Firt Name</mat-label>
+                            <input matInput type="text" placeholder="Firt Name" formControlName="firstName">
+                            <mat-hint>Insert first name</mat-hint>
+                        </mat-form-field>
+            
+                        <mat-form-field fxFlex="45">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput type="text" placeholder="Last Name" formControlName="lastName">
+                            <mat-hint>Insert last name</mat-hint>
+                        </mat-form-field>
+                    </div>
+    
+                    <mat-form-field>
+                        <input matInput type="text" placeholder="Address" autocomplete="address-level3" formControlName="address">
+                    </mat-form-field>
+    
+                    <div fxFlex="row" fxLayoutAlign="space-between stretch">
+                        <mat-form-field fxFlex="70">
+                            <mat-label>City</mat-label>
+                            <input matInput placeholder="City" formControlName="city">
+                            <mat-hint>Insert City</mat-hint>
+                        </mat-form-field>
+    
+                        <mat-form-field fxFlex="20">
+                            <mat-select matNativeControl placeholder="State" formControlName="state">
+                                <mat-option *ngFor="let states of statesBrazil" [value]="states">{{ states }}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+    
+                    <div>
+                        <mat-form-field fxFlex= "50%">
+                            <mat-label>Mobile Phone</mat-label>
+                            <input type="tel" matInput placeholder="(xx) - xxxxx-xxxx" autocomplete="mobile" formControlName="mobile">
+                            <mat-hint>Insert Mobile Phone</mat-hint>
+                        </mat-form-field>
+                    </div>
+    
+                    <div>
+                        <mat-form-field fxFlex="90">
+                            <mat-label>Email</mat-label>
+                            <input matInput type="email" placeholder="Email" autocomplete="email" formControlName="email">
+                            <mat-hint>Insert Email</mat-hint>
+                        </mat-form-field>    
+                    </div>
+    
+                    <div>
+                        <mat-form-field fxFlex="45">
+                            <input matInput type="password" autocomplete="off" formControlName="password">
+                            <mat-placeholder><mat-icon>lock</mat-icon>New Password</mat-placeholder>
+                        </mat-form-field>
+    
+                        <mat-form-field fxFlex="45">
+                            <input matInput type="password" autocomplete="off" formControlName="passwordConfirmation">
+                            <mat-placeholder><mat-icon>lock_outline</mat-icon>Password Confirmation</mat-placeholder>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="end end">
+                        <button mat-button><mat-icon>done</mat-icon>Register</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </form>
+    </div>
+</div>

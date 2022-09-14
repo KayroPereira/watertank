@@ -1,0 +1,41 @@
+<div class="main-container-home">
+    <div class="container-home">
+        <div class="favorite-home" style="border: solid blue 1px">
+            <!-- <div *ngFor="let device of devicesFavoritesTemp" style="border: solid 1px red;"> -->
+                <!-- <app-resume-water-tank *ngIf="isDevice(device.id_user, device.mac) != undefined" [idUser]='device?.id_user || ""' [mac]="device.mac"></app-resume-water-tank> -->
+                <!-- <button *ngIf='isDevice("", "")'>Teste</button> -->
+                <!-- <button >Teste</button> -->
+                <!-- <app-resume-water-tank *ngIf="isDevice(device.id_user, device.mac) != undefined"></app-resume-water-tank> -->
+            <!-- </div> -->
+            <!-- <app-resume-water-tank></app-resume-water-tank>
+            <app-resume-water-tank></app-resume-water-tank>
+            <app-resume-water-tank></app-resume-water-tank>
+            <app-resume-water-tank></app-resume-water-tank>
+            <app-resume-water-tank></app-resume-water-tank>
+            <app-resume-water-tank></app-resume-water-tank>
+            <app-resume-water-tank></app-resume-water-tank> -->
+
+            <!-- <app-resume-water-tank></app-resume-water-tank> -->
+            <!-- <app-resume-water-tank idUser="teste" mac="tes433"></app-resume-water-tank> -->
+
+                <!-- <router-outlet name="favoriteHome" style="border: solid blue 1px"></router-outlet> -->
+
+            <!-- <app-resume-water-tank *ngIf="isDevice('device.id_user', 'device.mac') != undefined"></app-resume-water-tank> -->
+
+            <div *ngFor="let device of mainService.getDevicesFavorites() | async" style="border: solid 1px red;">
+                <!-- <app-resume-water-tank *ngIf="isDevice(device.id_user, device.mac) != undefined" [idUser]='device?.id_user || ""' [mac]="device.mac"></app-resume-water-tank> -->
+                <app-resume-water-tank [idUser]='device?.id_user || ""' [mac]="device.mac"></app-resume-water-tank>
+                <!-- <button *ngIf='isDevice("", "")'>Teste</button> -->
+                <!-- <button >Teste</button> -->
+                <!-- <app-resume-water-tank *ngIf="isDevice(device.id_user, device.mac) != undefined"></app-resume-water-tank> -->
+            </div>
+        </div>
+        <div class="general-home">
+            <h1>General Space</h1>
+            <button (click)="deleteTemp()">Delete</button>
+            <button (click)="addTemp()">Add</button>
+            <button (click)="test()">Test</button>
+            <!-- <button (click)="deleteTemp()">Delete</button> -->
+        </div>
+    </div>
+</div>
